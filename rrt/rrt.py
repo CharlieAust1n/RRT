@@ -210,21 +210,6 @@ class RRTPlanner:
             networkx.Graph: The final RRT tree.
         """
         for iteration in range(self.max_iterations):
-            '''random_sample = self.random_configuration()
-            
-            if self.distance(random_sample, self.goal) <= self.step_size:
-                if not self.coll_check(random_sample, self.goal):
-                    self.tree.add_node(tuple(random_sample))
-                    self.tree.add_edge(tuple(self.start), tuple(random_sample))
-                    self.tree.add_node(tuple(self.goal))
-                    self.tree.add_edge(tuple(random_sample), tuple(self.goal))
-                    return True, self.tree
-
-            nearest_sample = self.nearest(random_sample)
-            new_point = self.step_towards(nearest_sample, random_sample)
-            if not self.coll_check(nearest_sample, new_point):
-                self.tree.add_node(tuple(new_point))
-                self.tree.add_edge(tuple(nearest_sample), tuple(new_point))'''
             random_sample = self.random_configuration()
             nearest_sample = self.nearest(random_sample)
             new_point = self.step_towards(nearest_sample, random_sample)
